@@ -51,10 +51,10 @@
             text-align: center;
         }
 
-        section div {
+        .container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             width: 100%;
             max-width: 600px;
             margin: 0 auto;
@@ -65,12 +65,19 @@
             border-radius: 10px;
         }
 
-        section div img {
+        .container img {
             width: 100px;
             aspect-ratio: 1;
             border-radius: 50%;
             box-shadow: 0 0 8px 1px lightblue;
             margin-top: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
         }
 
         a {
@@ -119,38 +126,40 @@
             color: #0f172a;
         }
 
+        /* Stile del widget ElevenLabs */
         .elevenlabs-widget {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            width: auto; /* Assicura che si adatti al contenuto */
-            height: auto;
+            width: 100%;
             display: flex;
             justify-content: center;
-            align-items: center;
+            margin-bottom: 10px;
         }
 
-        /* Rimuovi lo sfondo del widget */
         elevenlabs-convai {
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
+            width: 100%;
+            max-width: 350px;
+            height: 70px;
+            border-radius: 10px;
+            background: white !important;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
 
 <body>
     <section>
-        <div>
+        <div class="container">
             <h2>SMART AI</h2>
-            <!-- Logo senza contenitore -->
             <img src="INSERISCI_QUI_IL_LOGO" alt="Logo Aziendale" />
             <p style="color: white; text-align: center;">Soluzioni AI per la tua azienda</p>
 
-            <!-- Pulsanti -->
-            <div>
+            <!-- Widget ElevenLabs sopra i pulsanti -->
+            <div class="elevenlabs-widget">
+                <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
+                <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+            </div>
+
+            <!-- Sezione pulsanti -->
+            <div class="buttons">
                 <a href="https://www.linkedin.com/in/riccardo-modena-13918a61/">
                     <i class="fa-brands fa-linkedin"></i>
                     <p>LinkedIn</p>
@@ -173,16 +182,10 @@
         </div>
     </section>
 
-    <!-- Widget ElevenLabs come elemento "fly" -->
-    <div class="elevenlabs-widget">
-        <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
-        <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
-    </div>
-
     <footer>
         <a href="#">Powered by Riccardo Modena</a>
     </footer>
- 
+
 </body>
 
 </html>
