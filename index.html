@@ -28,6 +28,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         h2 {
@@ -53,9 +54,11 @@
         section {
             display: grid;
             place-items: center;
-            position: absolute;
+            position: relative;
             inset: 0;
             overflow-y: scroll;
+            flex-grow: 1;
+            text-align: center;
         }
 
         section div {
@@ -93,6 +96,7 @@
             gap: 20px;
             border-radius: 4px;
             transition-duration: 200ms;
+            background: transparent;
         }
 
         a:hover {
@@ -104,18 +108,17 @@
             font-size: 1.3em;
         }
 
-        .contact-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
+        footer {
             text-align: center;
-            text-decoration: none;
-            margin-top: 20px;
+            color: white;
+            padding: 10px;
         }
 
-        .contact-btn:hover {
-            background-color: #45a049;
+        .elevenlabs-widget {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -147,15 +150,19 @@
                     <p>Facebook</p>
                 </a>
             </div>
-            <p style="color: white;">Powered by Riccardo Modena</p>
-            <a href="https://forms.gle/UPLGDQ5JU766MUcn9" class="contact-btn" target="_blank">Contattaci</a>
+            <a href="https://forms.gle/UPLGDQ5JU766MUcn9" target="_blank">Contattaci</a>
             <a href="INSERISCI QUI IL LINK AL SITO" target="_blank">
                 <p>Visita il nostro sito</p>
             </a>
         </div>
-        <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
-        <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+        <div class="elevenlabs-widget">
+            <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
+            <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+        </div>
     </section>
+    <footer>
+        <p>Powered by Riccardo Modena</p>
+    </footer>
 </body>
 
 </html>
