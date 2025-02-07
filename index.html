@@ -25,38 +25,27 @@
 
         body {
             height: 100vh;
-            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            background: black;
+            color: white;
         }
 
         h2 {
             font-family: 'Saira', sans-serif;
             font-weight: 600;
             text-transform: uppercase;
-            color: white;
-            text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 50%);
+            text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, 0.5);
             font-size: 3em;
             text-align: center;
         }
 
-        body > img {
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            z-index: -1;
-        }
-
         section {
-            display: grid;
-            place-items: center;
-            position: relative;
-            inset: 0;
-            overflow-y: scroll;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             flex-grow: 1;
             text-align: center;
         }
@@ -67,13 +56,10 @@
             gap: 10px;
             width: 100%;
             max-width: 600px;
-            margin: 0 auto;
-            padding: 10px;
-            justify-content: center;
+            padding: 20px;
             align-items: center;
             background: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
-            padding: 20px;
         }
 
         section div img {
@@ -110,7 +96,6 @@
 
         footer {
             text-align: center;
-            color: white;
             padding: 10px;
         }
 
@@ -130,31 +115,40 @@
             color: #0f172a;
         }
 
-        .elevenlabs-widget {
+        /* Widget ElevenLabs centrato */
+        .elevenlabs-container {
             display: flex;
             justify-content: center;
-            align-items: center;
+            width: 100%;
             margin-bottom: 20px;
+        }
+
+        .elevenlabs-widget {
+            width: 100%;
+            max-width: 500px; /* Imposta una dimensione massima */
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
         }
     </style>
 </head>
 
 <body>
-    <img src="https://futurodigitale.infocert.it/wp-content/uploads/2024/11/Intelligenza-Artificiale-Ricerca_AdobeStock_791118168-scaled.jpeg" alt="sfondo" />
     <section>
         <div>
             <h2>SMART AI</h2>
-            <div>
-                <img src="INSERISCI QUI IL LOGO" alt="Logo Aziendale" />
-            </div>
-            <p style="color: white; text-align: center;">Soluzioni AI per la tua azienda</p>
+            <img src="INSERISCI QUI IL LOGO" alt="Logo Aziendale" />
+            <p>Soluzioni AI per la tua azienda</p>
 
-            <!-- Widget ElevenLabs Spostato -->
-            <div class="elevenlabs-widget">
-                <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
-                <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+            <!-- Widget ElevenLabs Centrale -->
+            <div class="elevenlabs-container">
+                <div class="elevenlabs-widget">
+                    <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
+                </div>
             </div>
-
+            
             <!-- Pulsanti -->
             <div>
                 <a href="https://www.linkedin.com/in/riccardo-modena-13918a61/">
@@ -178,9 +172,12 @@
             </div>
         </div>
     </section>
+
     <footer>
         <a href="#">Powered by Riccardo Modena</a>
     </footer>
+
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
 </body>
 
 </html>
