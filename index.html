@@ -11,9 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Saira:wght@800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Saira:wght@800&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -25,10 +23,10 @@
 
         body {
             height: 100vh;
-            position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
             background: url('https://futurodigitale.infocert.it/wp-content/uploads/2024/11/Intelligenza-Artificiale-Ricerca_AdobeStock_791118168-scaled.jpeg') no-repeat center center fixed;
             background-size: cover;
         }
@@ -45,39 +43,34 @@
 
         section {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            flex-grow: 1;
             text-align: center;
         }
 
-        .container {
+        .content {
             display: flex;
             flex-direction: column;
             gap: 15px;
             width: 100%;
             max-width: 600px;
-            margin: 0 auto;
             padding: 20px;
-            justify-content: center;
-            align-items: center;
             background: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
         }
 
-        .container img {
+        .content img {
             width: 100px;
             aspect-ratio: 1;
             border-radius: 50%;
             box-shadow: 0 0 8px 1px lightblue;
-            margin-top: 10px;
+            margin: 10px auto;
         }
 
         .buttons {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            width: 100%;
         }
 
         a {
@@ -91,7 +84,7 @@
             text-decoration: none;
             gap: 20px;
             border-radius: 4px;
-            transition-duration: 200ms;
+            transition: 200ms;
             background: transparent;
         }
 
@@ -126,39 +119,36 @@
             color: #0f172a;
         }
 
-        /* Stile del widget ElevenLabs */
+        /* Stile per il widget di ElevenLabs */
         .elevenlabs-widget {
             width: 100%;
             display: flex;
             justify-content: center;
-            margin-bottom: 10px;
         }
 
+        /* Rimuove lo sfondo del widget */
         elevenlabs-convai {
-            width: 100%;
-            max-width: 350px;
-            height: 70px;
-            border-radius: 10px;
-            background: white !important;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
         }
     </style>
 </head>
 
 <body>
     <section>
-        <div class="container">
+        <div class="content">
             <h2>SMART AI</h2>
             <img src="INSERISCI_QUI_IL_LOGO" alt="Logo Aziendale" />
             <p style="color: white; text-align: center;">Soluzioni AI per la tua azienda</p>
 
-            <!-- Widget ElevenLabs sopra i pulsanti -->
+            <!-- Widget ElevenLabs posizionato prima dei pulsanti -->
             <div class="elevenlabs-widget">
                 <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
                 <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
             </div>
 
-            <!-- Sezione pulsanti -->
+            <!-- Pulsanti -->
             <div class="buttons">
                 <a href="https://www.linkedin.com/in/riccardo-modena-13918a61/">
                     <i class="fa-brands fa-linkedin"></i>
