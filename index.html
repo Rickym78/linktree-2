@@ -28,72 +28,146 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #000;
         }
 
         h2 {
             font-family: 'Saira', sans-serif;
-            font-weight: 800;
-            font-size: 3rem;
+            font-weight: 600;
             text-transform: uppercase;
             color: white;
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
-            text-align: center;
+            text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 50%);
+            font-size: 3em;
         }
 
-        .logo {
-            width: 150px;
-            height: auto;
-            margin-bottom: 20px;
+        body > img {
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
         }
 
         section {
+            display: grid;
+            place-items: center;
+            position: absolute;
+            inset: 0;
+            overflow-y: scroll;
+        }
+
+        section div {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        a.button {
-            display: block;
-            background: #00aced;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        a.button:hover {
-            background: #007bb5;
-        }
-
-        iframe {
+            gap: 10px;
             width: 100%;
             max-width: 600px;
-            height: 500px;
-            border: none;
+            margin: 0 auto;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        section div img {
+            width: 100px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            box-shadow: 0 0 8px 1px lightblue;
+        }
+
+        a {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid white;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            gap: 20px;
+            border-radius: 4px;
+            transition-duration: 200ms;
+        }
+
+        a:hover {
+            background: white;
+            color: #0f172a;
+        }
+
+        a i {
+            font-size: 1.3em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 
 <body>
-    <img src="https://futurodigitale.infocert.it/wp-content/uploads/2024/11/Intelligenza-Artificiale-Ricerca_AdobeStock_791118168-scaled.jpeg" alt="sfondo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" />
-    
+    <img src="https://futurodigitale.infocert.it/wp-content/uploads/2024/11/Intelligenza-Artificiale-Ricerca_AdobeStock_791118168-scaled.jpeg" alt="sfondo" />
     <section>
-        <img src="INSERISCI QUI IL LOGO" alt="Logo Aziendale" class="logo" />
-        <h2>SMART AI</h2>
-        <p style="color: white; text-align: center;">Soluzioni AI per la tua azienda</p>
-        
-        <a href="https://forms.gle/UPLGDQ5JU766MUcn9" class="button">Contattaci</a>
-        <a href="INSERISCI QUI IL LINK AL SITO" class="button">Visita il nostro sito</a>
+        <div>
+            <h2>SMART AI</h2>
+            <p style="color: white; text-align: center;">Soluzioni AI per la tua azienda</p>
+            <div>
+                <a href="https://www.linkedin.com/in/riccardo-modena-13918a61/">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <p>LinkedIn</p>
+                </a>
+                <a href="https://www.tiktok.com/@mr3d.riccardo">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <p>TikTok</p>
+                </a>
+                <a href="https://www.instagram.com/riccardo_mode_/">
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>Instagram</p>
+                </a>
+                <a href="https://www.facebook.com/riccardo.modena.792">
+                    <i class="fa-brands fa-facebook"></i>
+                    <p>Facebook</p>
+                </a>
+            </div>
+            <p style="color: white;">Powered by Riccardo Modena</p>
+            <form action="https://forms.gle/UPLGDQ5JU766MUcn9" method="POST">
+                <input type="text" name="name" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Messaggio" required></textarea>
+                <input type="submit" value="Invia">
+            </form>
+            <a href="INSERISCI QUI IL LINK AL SITO" target="_blank">
+                <p>Visita il nostro sito</p>
+            </a>
+            <div>
+                <p style="color: white; text-align: center;">Logo Aziendale:</p>
+                <img src="INSERISCI QUI IL LOGO" alt="Logo" />
+            </div>
+        </div>
+        <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
+        <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
     </section>
 </body>
 
