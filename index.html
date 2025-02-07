@@ -11,7 +11,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Saira:wght@800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Saira:wght@800&display=swap"
+        rel="stylesheet">
 
     <style>
         * {
@@ -23,10 +25,10 @@
 
         body {
             height: 100vh;
+            position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-between;
             background: url('https://futurodigitale.infocert.it/wp-content/uploads/2024/11/Intelligenza-Artificiale-Ricerca_AdobeStock_791118168-scaled.jpeg') no-repeat center center fixed;
             background-size: cover;
         }
@@ -43,34 +45,32 @@
 
         section {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            flex-grow: 1;
             text-align: center;
         }
 
-        .content {
+        section div {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
             width: 100%;
             max-width: 600px;
+            margin: 0 auto;
             padding: 20px;
+            justify-content: center;
+            align-items: center;
             background: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
         }
 
-        .content img {
+        section div img {
             width: 100px;
             aspect-ratio: 1;
             border-radius: 50%;
             box-shadow: 0 0 8px 1px lightblue;
-            margin: 10px auto;
-        }
-
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            margin-top: 10px;
         }
 
         a {
@@ -84,7 +84,7 @@
             text-decoration: none;
             gap: 20px;
             border-radius: 4px;
-            transition: 200ms;
+            transition-duration: 200ms;
             background: transparent;
         }
 
@@ -119,14 +119,14 @@
             color: #0f172a;
         }
 
-        /* Stile per il widget di ElevenLabs */
         .elevenlabs-widget {
-            width: 100%;
-            display: flex;
-            justify-content: center;
+            position: fixed; /* Rende il widget "fly" */
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
         }
 
-        /* Rimuove lo sfondo del widget */
+        /* Rimuovi lo sfondo del widget */
         elevenlabs-convai {
             background: transparent !important;
             border: none !important;
@@ -137,19 +137,14 @@
 
 <body>
     <section>
-        <div class="content">
+        <div>
             <h2>SMART AI</h2>
+            <!-- Logo senza contenitore -->
             <img src="INSERISCI_QUI_IL_LOGO" alt="Logo Aziendale" />
             <p style="color: white; text-align: center;">Soluzioni AI per la tua azienda</p>
 
-            <!-- Widget ElevenLabs posizionato prima dei pulsanti -->
-            <div class="elevenlabs-widget">
-                <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
-                <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
-            </div>
-
             <!-- Pulsanti -->
-            <div class="buttons">
+            <div>
                 <a href="https://www.linkedin.com/in/riccardo-modena-13918a61/">
                     <i class="fa-brands fa-linkedin"></i>
                     <p>LinkedIn</p>
@@ -172,10 +167,16 @@
         </div>
     </section>
 
+    <!-- Widget ElevenLabs come elemento "fly" -->
+    <div class="elevenlabs-widget">
+        <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
+        <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    </div>
+
     <footer>
         <a href="#">Powered by Riccardo Modena</a>
     </footer>
-
+ 
 </body>
 
 </html>
