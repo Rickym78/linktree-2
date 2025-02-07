@@ -123,8 +123,13 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Centra esattamente il widget */
+            transform: translate(-50%, -50%);
             z-index: 1000;
+            width: auto; /* Assicura che si adatti al contenuto */
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Rimuovi lo sfondo del widget */
