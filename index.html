@@ -176,31 +176,7 @@
     <footer>
         <a href="#">Powered by Riccardo Modena</a>
     </footer>
-    <script>
-    // Rendere il widget trascinabile
-    const widget = document.querySelector('.elevenlabs-widget');
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    widget.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        offsetX = e.clientX - widget.getBoundingClientRect().left;
-        offsetY = e.clientY - widget.getBoundingClientRect().top;
-        widget.style.cursor = 'grabbing';
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-            widget.style.left = `${e.clientX - offsetX}px`;
-            widget.style.top = `${e.clientY - offsetY}px`;
-        }
-    });
-
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-        widget.style.cursor = 'grab';
-    });
-</script>
+ 
 </body>
 
 </html>
