@@ -25,27 +25,38 @@
 
         body {
             height: 100vh;
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background: url("INSERISCI_QUI_IL_LINK_ALLO_SFONDO.jpg") no-repeat center center/cover;
-            color: white;
         }
 
         h2 {
             font-family: 'Saira', sans-serif;
             font-weight: 600;
             text-transform: uppercase;
-            text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, 0.5);
+            color: white;
+            text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 50%);
             font-size: 3em;
             text-align: center;
         }
 
+        body > img {
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+
         section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            display: grid;
+            place-items: center;
+            position: relative;
+            inset: 0;
+            overflow-y: scroll;
             flex-grow: 1;
             text-align: center;
         }
@@ -53,13 +64,16 @@
         section div {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
             width: 100%;
             max-width: 600px;
-            padding: 20px;
+            margin: 0 auto;
+            padding: 10px;
+            justify-content: center;
             align-items: center;
             background: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
+            padding: 20px;
         }
 
         section div img {
@@ -96,6 +110,7 @@
 
         footer {
             text-align: center;
+            color: white;
             padding: 10px;
         }
 
@@ -115,40 +130,29 @@
             color: #0f172a;
         }
 
-        /* Widget ElevenLabs centrato */
-        .elevenlabs-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
         .elevenlabs-widget {
-            width: 100%;
-            max-width: 500px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 10px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 
 <body>
+    <img src="https://futurodigitale.infocert.it/wp-content/uploads/2024/11/Intelligenza-Artificiale-Ricerca_AdobeStock_791118168-scaled.jpeg" alt="sfondo" />
     <section>
         <div>
             <h2>SMART AI</h2>
-            <img src="INSERISCI_QUI_IL_LOGO" alt="Logo Aziendale" />
-            <p>Soluzioni AI per la tua azienda</p>
+            <div>
+                <img src="INSERISCI QUI IL LOGO" alt="Logo Aziendale" />
+            </div>
+            <p style="color: white; text-align: center;">Soluzioni AI per la tua azienda</p>
 
-            <!-- Widget ElevenLabs VERAMENTE CENTRATO -->
-            <div class="elevenlabs-container">
-                <div class="elevenlabs-widget">
-                    <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
-                </div>
+            <!-- Widget ElevenLabs Spostato -->
+            <div class="elevenlabs-widget">
+                <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
+                <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
             </div>
 
             <!-- Pulsanti -->
@@ -170,16 +174,13 @@
                     <p>Facebook</p>
                 </a>
                 <a href="https://forms.gle/UPLGDQ5JU766MUcn9" target="_blank">Contattaci</a>
-                <a href="INSERISCI_QUI_IL_LINK_AL_SITO" target="_blank">Visita il nostro sito</a>
+                <a href="INSERISCI QUI IL LINK AL SITO" target="_blank">Visita il nostro sito</a>
             </div>
         </div>
     </section>
-
     <footer>
         <a href="#">Powered by Riccardo Modena</a>
     </footer>
-
-    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
 </body>
 
 </html>
