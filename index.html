@@ -37,6 +37,7 @@
             color: white;
             text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 50%);
             font-size: 3em;
+            text-align: center;
         }
 
         body > img {
@@ -77,6 +78,7 @@
             aspect-ratio: 1;
             border-radius: 50%;
             box-shadow: 0 0 8px 1px lightblue;
+            margin-top: 10px;
         }
 
         a {
@@ -102,26 +104,17 @@
             font-size: 1.3em;
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .contact-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
             margin-top: 20px;
         }
 
-        input, textarea {
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
+        .contact-btn:hover {
             background-color: #45a049;
         }
     </style>
@@ -132,6 +125,9 @@
     <section>
         <div>
             <h2>SMART AI</h2>
+            <div>
+                <img src="INSERISCI QUI IL LOGO" alt="Logo Aziendale" />
+            </div>
             <p style="color: white; text-align: center;">Soluzioni AI per la tua azienda</p>
             <div>
                 <a href="https://www.linkedin.com/in/riccardo-modena-13918a61/">
@@ -152,19 +148,10 @@
                 </a>
             </div>
             <p style="color: white;">Powered by Riccardo Modena</p>
-            <form action="https://forms.gle/UPLGDQ5JU766MUcn9" method="POST">
-                <input type="text" name="name" placeholder="Nome" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Messaggio" required></textarea>
-                <input type="submit" value="Invia">
-            </form>
+            <a href="https://forms.gle/UPLGDQ5JU766MUcn9" class="contact-btn" target="_blank">Contattaci</a>
             <a href="INSERISCI QUI IL LINK AL SITO" target="_blank">
                 <p>Visita il nostro sito</p>
             </a>
-            <div>
-                <p style="color: white; text-align: center;">Logo Aziendale:</p>
-                <img src="INSERISCI QUI IL LOGO" alt="Logo" />
-            </div>
         </div>
         <elevenlabs-convai agent-id="npWGnJlZxlqEb9xML431"></elevenlabs-convai>
         <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
